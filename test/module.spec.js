@@ -38,7 +38,8 @@ describe('node-mac-contacts', () => {
   })
 
   describe('getAllContacts([extraProperties])', () => {
-    it('should return an array', () => {
+    it('should return an array', function () {
+      this.timeout(5000) // Set timeout to 5000ms (5 seconds) for large contact sets
       const contacts = getAllContacts()
       expect(contacts).to.be.an('array')
     })
